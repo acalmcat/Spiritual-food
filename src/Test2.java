@@ -1,5 +1,5 @@
 import java.util.Scanner;
-//我在这里改了
+
 public class Test2 {
     public static void main(String[] args) {
         System.out.println("********************趣味测试***************************");
