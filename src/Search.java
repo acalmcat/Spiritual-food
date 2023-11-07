@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//二分查找
 public class Search {
     public static void main(String[] args) {
         //二分查找
