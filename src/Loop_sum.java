@@ -1,4 +1,5 @@
 public class Loop_sum {
+    //循环求和
     public static void main(String[] args) {
         //用while求1-100的和
         int sum=0;
