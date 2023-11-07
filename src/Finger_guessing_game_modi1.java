@@ -1,4 +1,5 @@
 import java.util.Scanner;
+//石头剪刀布（switch）
 //将if改为switch
 public class Finger_guessing_game_modi1 {
     public static void main(String[] args) {
