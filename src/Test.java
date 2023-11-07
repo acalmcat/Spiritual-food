@@ -10,5 +10,7 @@ public class Test {
         }
         System.out.println("1到100的所有奇数的和：");
         System.out.println(sum);
+        //改动测试asdasd
+
     }
 }
