@@ -1,6 +1,6 @@
 import java.util.Scanner;
-
-public class Test2 {
+//2人一组完成的测试系统
+public class Examination {
     public static void main(String[] args) {
         System.out.println("********************趣味测试***************************");
         System.out.println("            1------心理测试");
