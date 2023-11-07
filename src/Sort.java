@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+//冒泡排序和快速排序
 public class Sort {
     public static void main(String[] args) {
         //写一个没有排序的数组
