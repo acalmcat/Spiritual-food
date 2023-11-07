@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//石头剪刀布（if）
 public class Finger_guessing_game {
     public static void main(String[] args) {
         //猜拳游戏
