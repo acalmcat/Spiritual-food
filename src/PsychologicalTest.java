@@ -1,6 +1,7 @@
 //心理测试
 //根据回答的问题计算分数，判断心理压力
 import java.util.Scanner;
+//心理测试
 public class PsychologicalTest {
     public static void main(String[] args){
         System.out.println("这是一个心理测试，请给出你的分数\n根据问题输入0-10，输入数值越大表示越符合自身情况");
