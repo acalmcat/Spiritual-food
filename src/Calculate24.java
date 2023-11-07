@@ -1,6 +1,6 @@
 import java.util.Locale;
 import java.util.Scanner;
-
+//猜24游戏
 public class Calculate24 {
     public static void main(String[] args) {
         //带括号（括号在前面）
