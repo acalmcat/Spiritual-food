@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//猜商品价格
 public class Guess_price1 {
     public static void main(String[] args) {
         /*
