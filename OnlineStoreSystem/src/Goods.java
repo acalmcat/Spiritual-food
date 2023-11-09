@@ -1,34 +1,29 @@
 import java.util.Scanner;
 
 /*
-商品模块中的商品类
+修改Goods类，变成Java开发的规范
  */
 public class Goods {
-    //把变量定义完成,peisong 配送的变量  num 数量的变量 price 价格的变量  name商品名称
-    String name;
-    String peison;
-    int num;
-    double price;
-    //大图，big_pic商品大图,small_pic是商品的小图,在订单中只需要大图，不需要小图，不要把big_pic给订单用
-    //继承后，不允许子类使用，使用关键字是private
-    private String big_pic;
-    String small_pic;
-    //有两个方法  buy是立即购买 addcar加入购物车,这个方法中不用加static
-    public  void buy(){
-        //最终用户触发buy方法,信息方法知道商品名称,商品数量,价格,配送
-        //把Goods类中的变量输出,直接输出name变成红色,会报错, class类中帮助定义一个关键字,可以使用关键字引用变量,关键字this
-        //this作用指明当前的类this的实例,这里this报错, this报错的
-        System.out.println("你购买了这个商品");
-        //调用订单模块,订单需要实例化，先实例化订单类，然后调用方法,这里实例化一个Order
-        //实例化Pay类，这里不能再实例化Order,实例化Order会产生地址，需要在整个链中只有一个地址
-
-//        Order order = new Order();
-        //order实例化不用，下面order会报错，调用这个方法，只能改成当前实例，this
-        //改成this后，make_order报错，因为当前类中没有make_order()
-        //再写make_order违背了模块定义，
-        this.make_order();
+    //第一，满足封装特性，所有变量全部私有private
+    private String name;
+    private String peison;
+    private int num;
+    private double price;
+    //    private String big_pic;
+    private String small_pic;
+    //自动产生一个无参构造
+    public Goods() {
     }
-    //显示商品相关信息方法，提供给主页调用
+
+    //自动产生全参构造函数，主类main函数调用这个类直接传入参数，不需要在主类main中产生init方法
+    public Goods(String name, double price,String peison, int num) {
+        this.name = name;
+        this.peison = peison;
+        this.num = num;
+        this.price = price;
+    }
+    //正常逻辑中的方法
+    //显示所有的商品的方法show
     public void show(){
         //首先显示商品
         System.out.println(this.name);
@@ -38,7 +33,6 @@ public class Goods {
         //用户调整数量
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入购买商品的数量");
-        //数量只允许整形，如果防止用户输入错误，这里 try-----catch
         //这里的商品数量，如果出错，要继续输入
         while(true){
             try{
@@ -71,16 +65,64 @@ public class Goods {
             this.buy();
         }
 
-
-
-
     }
-    //下面方法为了引用全局的变量,这里不加static
+    //立即购买的方法
+    public  void buy(){
+        System.out.println("你购买了这个商品");
+        //这里调用Order订单类的make_order()方法,在这里产生一个空方法,在Order类中重写
+        this.make_order();
+    }
+    //加入购物车的方法
     public  void addcar(){
+
         System.out.println("你已经把商品加入购物车");
     }
-    //扩展方法，不写这个内容报错make_order方法是写在Goods中没有实现，关键字是public
+    //protected修饰,需要了类继承后进行重写
     protected void make_order(){
         //代码是由订单类做的,不是由Goods模块做的,它只能由Order的开发人员实现
+    }
+
+    //便于阅读，这些getter或者Setter方法放在代码的尾部
+    //第二，封装私有变量后，需要取值的变量用get方法，需要赋值的方法用set,即需要取值也需要赋值就是两个方法都有
+    //比如对name,get加上属性的首字母大写,get方法的目的是需要用户获取这个值，这里有返回值
+    public String getName(){
+        return this.name;
+    }
+    //set方法只起到一个赋值的作用，不需要返回值，因为需要赋值，必须有参数，参数name是局部变量
+    //一般set方法局部变量和类中属性名重名
+    public void setName(String name) {
+        this.name=name;
+    }
+
+    public String getPeison() {
+        return peison;
+    }
+
+    public void setPeison(String peison) {
+        this.peison = peison;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getSmall_pic() {
+        return small_pic;
+    }
+
+    public void setSmall_pic(String small_pic) {
+        this.small_pic = small_pic;
     }
 }
